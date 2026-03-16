@@ -5,6 +5,7 @@ from dash import dcc, html, Input, Output
 # Import des layouts et des callbacks (crucial pour enregistrer les interactions)
 from pages import table, table_cb
 from pages import compare, compare_cb
+from pages import markdown  # Import de la page Markdown
 
 # Initialisation de l'app (on retire use_pages=True pour garder le contrôle manuel)
 app = dash.Dash(
@@ -20,10 +21,11 @@ app.layout = html.Div([
     dbc.NavbarSimple(
         children=[
             # Utilisation de dcc.Link pour éviter de recharger toute la page
-            dbc.NavItem(dcc.Link("Données", href="/", className="nav-link")),
-            dbc.NavItem(dcc.Link("Comparaison", href="/compare", className="nav-link")),
+            dbc.NavItem(dcc.Link("Affichage des données", href="/", className="nav-link")),
+            dbc.NavItem(dcc.Link("Comparaison entre région", href="/compare", className="nav-link")),
+            dbc.NavItem(dcc.Link("Aide en ligne", href="/markdown", className="nav-link")),  # Lien vers la page Markdown
         ],
-        brand="🥑 Avocado Dashboard",
+        brand="Application des M2 MECEN",
         color="primary",
         dark=True,
         className="mb-4"
@@ -41,6 +43,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/compare':
         return compare.layout
+    elif pathname == '/markdown':
+        return markdown.layout
     else:
         return table.layout # Page par défaut (/)
 
