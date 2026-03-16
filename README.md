@@ -26,24 +26,22 @@ Avocado est une application interactive développée avec Dash, permettant d'exp
 
 ### Prérequis
 - Python 3.8 ou supérieur
-- [Poetry](https://python-poetry.org/) ou un autre gestionnaire d'environnement Python
 
 ### Étapes d'installation
 
 1. **Cloner le dépôt :**
    ```bash
    git clone <votre-url-depot>
-   cd DASH_CONTROLE_160326
    ```
 
 2. **Installer les dépendances :**
    ```bash
-   poetry install
+   uv
    ```
 
 3. **Lancer l'application :**
    ```bash
-   poetry run python app.py
+   uv run python app.py
    ```
 
 ---
@@ -54,25 +52,25 @@ Le projet suit une organisation modulaire, séparant les interfaces (Layouts) de
 ```bash
 DASH_CONTROLE_160326/
 │
-├── pages/                  ← Modules des pages de l'application [cite: 62]
-│   ├── table.py            ← Layout de la Page 1 (Données) [cite: 71]
+├── pages/                  ← Modules des pages de l'application
+│   ├── table.py            ← Layout de la Page 1 (Données)
 │   ├── table_cb.py         ← Logique des filtres du tableau 
-│   ├── compare.py          ← Layout de la Page 2 (Comparaison) [cite: 160]
-│   ├── compare_cb.py       ← Logique des graphiques comparatifs [cite: 178]
-│   └── markdown.py         ← Page 3 (Documentation Accordion) [cite: 182]
+│   ├── compare.py          ← Layout de la Page 2 (Comparaison)
+│   ├── compare_cb.py       ← Logique des graphiques comparatifs
+│   └── markdown.py         ← Page 3 (Documentation Accordion)
 │
-├── assets/                 ← Ressources statiques (CSS, Images, MD) [cite: 65]
+├── assets/                 ← Ressources statiques (CSS, Images, MD)
 │   ├── dash.jpg            ← Image de bannière pour la page Markdown
 │   ├── expli1.md           ← Contenu : Accueil
-│   ├── expli2.md           ← Contenu : Layout [cite: 186]
-│   └── expli3.md           ← Contenu : CallBack [cite: 197]
+│   ├── expli2.md           ← Contenu : Layout
+│   └── expli3.md           ← Contenu : CallBack
 │
-├── datas/                  ← Données sources [cite: 66]
-│   └── avocado.csv         ← Jeu de données des ventes d'avocats [cite: 21]
+├── datas/                  ← Données sources
+│   └── avocado.csv         ← Jeu de données des ventes d'avocats
 │
-├── app.py                  ← Point d'entrée principal (Multi-pages) [cite: 61, 209]
+├── app.py                  ← Point d'entrée principal (Multi-pages) 
 ├── pyproject.toml          ← Configuration UV et dépendances
-└── README.md               ← Vous êtes ici ! [cite: 67]
+└── README.md               ← Vous êtes ici ! 
 ```
 
 🚀 Utilisation
